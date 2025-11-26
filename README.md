@@ -13,6 +13,9 @@
 
 # Correr local / Docker
 
--
+- Local
+  -
+- Docker
+  - $ docker compose up --build
 
 # Ejemplos dde requests y respuestas
