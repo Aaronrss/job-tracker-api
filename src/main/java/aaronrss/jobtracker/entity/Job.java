@@ -1,6 +1,7 @@
 package aaronrss.jobtracker.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -34,6 +36,9 @@ public class Job {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private JobStatus status;
+
+    @OneToMany(mappedBy = "job")
+    private List<ApplicationNote> applicationNotes;
 
     private LocalDateTime appliedAt;
 

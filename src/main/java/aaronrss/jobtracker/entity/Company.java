@@ -26,6 +26,9 @@ public class Company {
     @OneToMany(mappedBy = "company")
     private List<Job> jobs;
 
+    @OneToMany(mappedBy = "company")
+    private List<Contact> contacts;
+
     // constructor vacío requerido por JPA
     protected Company() {
     }

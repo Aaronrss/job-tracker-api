@@ -9,22 +9,20 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "application_notes")
-public class ApplicationNote {
-
+@Table(name = "contacts")
+public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+    private String email;
+    private String phoneNumber;
+    private String position;
+
     @ManyToOne
-    @JoinColumn(name = "job_id")
-    private Job job;
-
-    private String note;
-
-    // constructor vacío requerido por JPA
-
-    protected ApplicationNote() {
-    }
+    @JoinColumn(name = "company_id")
+    private Company company; /* FK */
+    private Long userId; /* FK */
 
 }
