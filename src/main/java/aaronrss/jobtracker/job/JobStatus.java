@@ -1,4 +1,4 @@
-package aaronrss.jobtracker.entity;
+package aaronrss.jobtracker.job;
 
 public enum JobStatus {
     APPLIED,

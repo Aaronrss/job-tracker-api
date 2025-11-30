@@ -1,7 +1,8 @@
-package aaronrss.jobtracker.entity;
+package aaronrss.jobtracker.user;
 
 import java.util.List;
 
+import aaronrss.jobtracker.job.Job;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;

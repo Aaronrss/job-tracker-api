@@ -1,5 +1,6 @@
-package aaronrss.jobtracker.entity;
+package aaronrss.jobtracker.contact;
 
+import aaronrss.jobtracker.company.Company;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

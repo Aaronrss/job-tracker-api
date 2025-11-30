@@ -1,16 +1,16 @@
-package aaronrss.jobtracker.service;
+package aaronrss.jobtracker.user;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import aaronrss.jobtracker.entity.User;
-import aaronrss.jobtracker.repository.UserRepository;
 
 @Service
 public class UserService {
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public User createUser(User user) {
@@ -25,16 +25,18 @@ public class UserService {
             throw new IllegalArgumentException("Email already exists");
         }
 
-        // TODO: Hash password before saving (consider using BCryptPasswordEncoder)
+        // Hashear la contraseña antes de guardar
+        String hashedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(hashedPassword);
 
         return userRepository.save(user);
     }
 
-    public Boolean deleteUser(Long id) {
-        // Implementation goes here
-        return userRepository.findById(id).map(user -> {
-            userRepository.delete(user);
-            return true;
-        }).orElse(false);
+    public void deleteUser(Long userId, Long requesterId) {
+        if (!userId.equals(requesterId)) {
+            throw new RuntimeException("Unauthorized");
+        }
+        userRepository.deleteById(userId);
     }
+
 }

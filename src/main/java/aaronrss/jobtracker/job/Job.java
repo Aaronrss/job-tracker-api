@@ -1,8 +1,11 @@
-package aaronrss.jobtracker.entity;
+package aaronrss.jobtracker.job;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import aaronrss.jobtracker.applicationNote.ApplicationNote;
+import aaronrss.jobtracker.company.Company;
+import aaronrss.jobtracker.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

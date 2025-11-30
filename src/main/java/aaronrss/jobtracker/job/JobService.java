@@ -1,9 +1,6 @@
-package aaronrss.jobtracker.service;
+package aaronrss.jobtracker.job;
 
 import org.springframework.stereotype.Service;
-
-import aaronrss.jobtracker.entity.Job;
-import aaronrss.jobtracker.repository.JobRepository;
 
 @Service
 public class JobService {
