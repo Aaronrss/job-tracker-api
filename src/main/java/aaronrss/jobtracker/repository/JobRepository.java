@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import aaronrss.jobtracker.entity.Job;
 
 @Repository
-public interface JobApplicationRepository extends JpaRepository<Job, Long> {
+public interface JobRepository extends JpaRepository<Job, Long> {
 
     List<Job> findByCompany(String company);
 

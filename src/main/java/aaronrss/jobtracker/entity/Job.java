@@ -25,17 +25,17 @@ public class Job {
 
     private String jobTitle;
 
-    @ManyToOne
-    @JoinColumn(name = "company_id", nullable = false)
-    private Company company; /* FK */
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private JobStatus status;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user; /* FK */
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private JobStatus status;
+    @ManyToOne
+    @JoinColumn(name = "company_id", nullable = false)
+    private Company company; /* FK */
 
     @OneToMany(mappedBy = "job")
     private List<ApplicationNote> applicationNotes;

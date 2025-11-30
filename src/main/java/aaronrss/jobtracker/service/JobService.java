@@ -3,13 +3,13 @@ package aaronrss.jobtracker.service;
 import org.springframework.stereotype.Service;
 
 import aaronrss.jobtracker.entity.Job;
-import aaronrss.jobtracker.repository.JobApplicationRepository;
+import aaronrss.jobtracker.repository.JobRepository;
 
 @Service
-public class JobApplicationService {
-    private final JobApplicationRepository jobRepository;
+public class JobService {
+    private final JobRepository jobRepository;
 
-    public JobApplicationService(JobApplicationRepository jobRepository) {
+    public JobService(JobRepository jobRepository) {
         this.jobRepository = jobRepository;
     }
 
